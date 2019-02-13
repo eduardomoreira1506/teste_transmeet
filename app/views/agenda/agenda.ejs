@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Agenda - Teste Transmeet</title>
+
+			<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+			<link rel="stylesheet" href="agenda.css">
+		</head>
+	<body>
+		<div class="agenda">
+			<h1>Contatos</h1>
+
+
+			<table>
+				<thead class="tabelaCabeca">
+					<td>ID</td>
+					<td>Nome</td>
+					<td>Telefone</td>
+					<td>Email</td>
+				</thead>
+
+				<% for(var i=0; i< agenda.length; i++){ %>
+				<tr class="tabela">
+					<td><%= agenda[i].id %></td>
+					<td><%= agenda[i].name %></td>
+					<td><%= agenda[i].telephone %></td>
+					<td><%= agenda[i].email %></td>
+				</tr>
+				<% } %>
+			</table>
+		</div>
+	</body>
+
+	<div class="paiDosInputs">
+		<form action="/agenda/delete" method="post">
+			<input type="number" id="delete" name="delete" placeholder="Digite o ID da pessoa p/ remover">
+			<input type="submit" value="Remover">
+		</form>
+
+		<form action="/agenda/pesquisar" method="post">
+			<input type="text" id="pesquisar" name="pesquisar" placeholder="Digite a palavra chave">
+			<input type="submit" value="Pesquisar">
+		</form>
+
+		<form action="/agenda/editar" method="post">
+			<input type="number" id="editar" name="editar" placeholder="Digite o ID da pessoa p/ alterar">
+			<input type="submit" value="Editar">
+		</form>
+	</div>
+
+	<form class="adicionar" action="/adicionar" method="post">
+		<input type="submit" value="Adicionar Contato">
+		<i class="fas fa-plus-square"></i>
+	</form>
+	<style type="text/css">
+	body{
+		margin: 0;
+		padding: 35px 0 0 0;
+		background: url('agenda.jpg');
+		background-size: cover;
+	}
+
+	textarea:focus, input:focus, select:focus, button:focus{
+		box-shadow: 0 0 0 0;
+		border: 0 none;
+		outline: 0;
+	} 
+	a:hover, a:focus {
+		text-decoration: none!important;
+	}
+
+	.tabela{
+		-webkit-transition: ease-in-out .2s;
+		-o-transition: ease-in-out .2s;
+		transition: ease-in-out .2s;
+	}
+
+	.tabelaCabeca{
+	}
+
+	table{
+		margin-right: auto;
+		margin-left: auto;
+		display: table;
+		width: 970px;
+		border: 2px solid #6c3eab;
+		border-radius: 36px;
+		padding: 15px 10px 15px 10px;
+		font-family: Raleway;
+		color: #908f8f;
+		font-size: 20px;
+	}
+
+	.tabela:hover{
+		background: #ccc;
+		color: #7c58ad;
+		box-shadow: 3px 0px 9px 1px rgba(0, 0, 0, 0.75);
+		-webkit-transform: translateY(-5px);
+		-ms-transform: translateY(-5px);
+		-o-transform: translateY(-5px);
+		transform: translateY(-5px);
+	}
+
+	td{
+		min-width: 150px;
+	}
+
+	.agenda{
+		padding: 0 0 48px 0;
+		margin: 0 auto;
+		text-align: center;
+		display: block;
+		background: #fff;
+		border-radius: 35px;
+		box-shadow: 3px 0px 9px 1px rgba(0, 0, 0, 0.75);
+		width: 1200px;
+	}
+
+	h1{
+		font-family: RaleWay;
+		color: #7c58ad;
+		font-size: 79px;
+		margin: 15px 0 0 0;
+	}
+
+	.paiDosInputs{
+		text-align: center;
+		padding-top: 40px;
+		margin: 0 0 30px 0;
+	}
+
+	form{
+		display: inline-block;
+		width: 360px;
+		height: 90px;
+		background: #fff;
+		border-radius: 20px;
+		margin: 0 25px 0 25px;
+		text-align: center;
+	}
+
+	input[type=text],input[type=number]{
+		margin: 27px 0 0 0;
+		border-radius: 22px;
+		border: #7c58ad solid 2px;
+		width: 55%;
+		height: 28px;
+		padding: 0 0 0 13px;
+		font-family: raleway;
+		font-style: italic;
+	}
+	input[type=submit]{
+		background: #ccc;
+		height: 34px;
+		border: #7c58ad solid 2px;
+		border-radius: 11px;
+	}
+
+	.adicionar{
+		display: block;
+		margin: 0 auto;
+		background: white;
+		width: 200px;
+		height: 130px;
+		border-radius: 9%;
+		color: #7c58ad;
+		border: transparent 2px solid;
+		-webkit-transition: ease-in-out .2s;
+		-o-transition: ease-in-out .2s;
+		transition: ease-in-out .2s;
+	}
+	
+	.adicionar input{
+		background: none;
+		border: none;
+		display: block;
+		margin: 0 auto;
+		padding: 21px 0 0 0;
+		font-size: 22px;
+		color: #7c58ad;
+		height: 45px;
+	}
+
+	i{
+		font-size: 50px;
+		margin-top: 11px;
+	}
+
+	.adicionar:hover{
+		box-shadow: 1px 3px 14px 2px #000;
+		-webkit-transform: translateY(-10px);
+		-ms-transform: translateY(-10px);
+		-o-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+</style>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Cadastro de Contato</title>
+		</head>
+	<body>
+
+		<h1>Adicionar contato</h1>
+		<br>
+
+		<!-- imprimindo os erros -->
+		<% if(validacao) { %>
+			<ul>
+				<% for(var i = 0 ; i < validacao.length; i++){ %>
+					<li>
+						<%= validacao[i].msg %>						
+					</li>
+				<% } %>
+			</ul>
+		<% } %>
+		<div class="paiDoForm">
+			<form action="/agenda/salvar" method="post">
+				<input type="text" id="name" name="name" value="<%= agendamento.name %>" placeholder="Nome">
+				<input type="text" id="telephone" name="telephone"value="<%= agendamento.telephone %>" placeholder="Telefone">
+				<input type="text" id="email" name="email" value="<%= agendamento.email %>" placeholder="Email">
+				<input type="submit" value="Adicionar">
+			</form>
+		</div>
+		<style type="text/css">
+			body{
+			margin: 0;
+			padding: 35px 0 0 0;
+			background: #7c58ad;
+		}
+
+		textarea:focus, input:focus, select:focus, button:focus{
+			box-shadow: 0 0 0 0;
+			border: 0 none;
+			outline: 0;
+		} 
+		a:hover, a:focus {
+			text-decoration: none!important;
+		}
+		.resultado{
+			padding: 0 0 48px 0;
+			margin: 0 auto;
+			text-align: center;
+			display: block;
+			background: #fff;
+			border-radius: 35px;
+			box-shadow: 3px 0px 9px 1px rgba(0, 0, 0, 0.75);
+			width: 1200px;
+		}
+
+		.resultado h1{
+			font-family: RaleWay;
+			color: #7c58ad;
+			font-size: 79px;
+			margin: 15px 0 0 0;
+		}
+
+		h1{
+			text-align: center;
+			color: #fff;
+			font-size: 79px;
+			margin: 15px 0 0 0;
+			font-family: RaleWay;
+		}
+
+		.paiDoForm{
+			display: block;
+			margin: 0 auto;
+			text-align: center;
+			padding-top: 0;
+			width: 83%;
+			height: 170px;
+			background: #fff;
+			border-radius: 31px;
+		}
+
+		input[type=text],input[type=number]{
+			margin: 67px 20px 0 20px;
+			border-radius: 22px;
+			border: #7c58ad solid 2px;
+			height: 45px;
+			padding: 0 0 0 13px;
+			font-family: raleway;
+			font-style: italic;
+			display: inline-block;
+			width: 239px;
+		}
+		input[type=submit]{
+			background: #ccc;
+			height: 34px;
+			border: #7c58ad solid 2px;
+			border-radius: 11px;
+		}
+		</style>
+	</body>
+</html>

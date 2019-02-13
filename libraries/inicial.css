@@ -1,0 +1,102 @@
+body{
+	margin: 0;
+    padding: 0;
+    background: url('agenda.jpg');
+    background-size: cover;
+}
+
+textarea:focus, input:focus, select:focus, button:focus{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+  } 
+  a:hover, a:focus {
+    text-decoration: none!important;
+  }
+
+.globalDiv{
+	display: block;
+	background: #7c58ad;
+	width: 690px;
+	height: 363px;
+	border-radius: 40px;
+	box-shadow: 3px 0px 9px 1px rgba(0, 0, 0, 0.75);
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%,-50%);
+}
+
+h1{
+	font-family: Raleway;
+	text-align: center;
+	font-weight: 700;
+	color: #fff;
+	font-size: 45px;
+	padding: 0 27px 0 27px;
+	margin: 13px 0 0 0;
+	letter-spacing: 4px;
+}
+
+h2{
+	margin: 0;
+	text-align: center;
+	color: #ffffffc7;
+	font-family: Raleway;
+	text-transform: uppercase;
+	padding: 32px 0 0 0;
+}
+
+.forms{
+	text-align: center;
+	padding-top: 26px;
+}
+
+form{
+	display: inline-block;
+	background: white;
+	width: 200px;
+	height: 130px;
+	border-radius: 9%;
+	color: #7c58ad;
+	margin: 0 30px 0 30px;
+	border: transparent 2px solid;
+	-webkit-transition: ease-in-out .2s;
+	-o-transition: ease-in-out .2s;
+	transition: ease-in-out .2s;
+}
+
+input{
+	background: none;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    padding: 21px 0 0 0;
+    font-size: 22px;
+    color: #7c58ad;
+}
+
+i{
+	font-size: 50px;
+	margin-top: 11px;
+}
+
+form:hover{
+	box-shadow: 1px 3px 14px 2px #000;
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+
+footer{
+	position: absolute;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	background: #fff;
+	text-align: center;
+	font-family: bebas;
+	word-spacing: 3px;
+	font-size: 18px;
+}

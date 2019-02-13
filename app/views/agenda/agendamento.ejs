@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Página de Edição</title>
+
+			<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+			<link rel="stylesheet" href="agendamento.css">
+		</head>
+	<body>
+		<div class="resultado">
+			<h1>Contato atual:</h1>
+			<table>
+				<tr>
+					<td>ID</td>
+					<td>Titulo</td>
+					<td>Telefone</td>
+					<td>Email</td>
+				</tr>
+
+				<tr class="tabela">
+					<td id="id"><%= agenda[0].id %></td>
+					<td><%= agenda[0].name %></td>
+					<td><%= agenda[0].telephone %></td>
+					<td><%= agenda[0].email %></td>
+				</tr>
+			</table>
+		</div>
+		<h1>Editar:</h1>
+		<div class="paiDoForm">
+			<form action="/agendamento/editar" method="post">
+				<input type="text" id="id" name="id" value="<%= idParaEditar %>" style="display: none;">
+				<input type="text" id="name" name="name" placeholder="Digite o novo nome">
+				<input type="number" id="telephone" name="telephone" placeholder="Digite o novo telefone">
+				<input type="text" id="email" name="email" placeholder="Digite o novo Email">
+				<input type="submit" value="Editar">
+			</form>
+		</div>
+		<style type="text/css">
+		body{
+			margin: 0;
+			padding: 35px 0 0 0;
+			background: #7c58ad;
+		}
+
+		textarea:focus, input:focus, select:focus, button:focus{
+			box-shadow: 0 0 0 0;
+			border: 0 none;
+			outline: 0;
+		} 
+		a:hover, a:focus {
+			text-decoration: none!important;
+		}
+
+		.tabela{
+			-webkit-transition: ease-in-out .2s;
+			-o-transition: ease-in-out .2s;
+			transition: ease-in-out .2s;
+		}
+
+		.tabelaCabeca{
+		}
+
+		table{
+			margin-right: auto;
+			margin-left: auto;
+			display: table;
+			width: 970px;
+			border: 2px solid #6c3eab;
+			border-radius: 36px;
+			padding: 15px 10px 15px 10px;
+			font-family: Raleway;
+			color: #908f8f;
+			font-size: 20px;
+		}
+
+		.tabela:hover{
+			background: #ccc;
+			color: #7c58ad;
+			box-shadow: 3px 0px 9px 1px rgba(0, 0, 0, 0.75);
+			-webkit-transform: translateY(-5px);
+			-ms-transform: translateY(-5px);
+			-o-transform: translateY(-5px);
+			transform: translateY(-5px);
+		}
+
+		td{
+			min-width: 150px;
+		}
+
+		.resultado{
+			padding: 0 0 48px 0;
+			margin: 0 auto;
+			text-align: center;
+			display: block;
+			background: #fff;
+			border-radius: 35px;
+			box-shadow: 3px 0px 9px 1px rgba(0, 0, 0, 0.75);
+			width: 1200px;
+		}
+
+		.resultado h1{
+			font-family: RaleWay;
+			color: #7c58ad;
+			font-size: 79px;
+			margin: 15px 0 0 0;
+		}
+
+		h1{
+			text-align: center;
+			color: #fff;
+			font-size: 79px;
+			margin: 15px 0 0 0;
+			font-family: RaleWay;
+		}
+
+		.paiDoForm{
+			display: block;
+			margin: 0 auto;
+			text-align: center;
+			padding-top: 0;
+			width: 83%;
+			height: 170px;
+			background: #fff;
+			border-radius: 31px;
+		}
+
+		input[type=text],input[type=number]{
+			margin: 67px 20px 0 20px;
+			border-radius: 22px;
+			border: #7c58ad solid 2px;
+			height: 45px;
+			padding: 0 0 0 13px;
+			font-family: raleway;
+			font-style: italic;
+			display: inline-block;
+			width: 239px;
+		}
+		input[type=submit]{
+			background: #ccc;
+			height: 34px;
+			border: #7c58ad solid 2px;
+			border-radius: 11px;
+		}
+	</style>
+	</body>
+</html>
